@@ -13,20 +13,4 @@ import Img from "gatsby-image"
  * - `StaticQuery`: https://gatsby.app/staticquery
  */
 
-const Image = ({ rel_link }) => (
-  <StaticQuery
-    query={graphql`
-      query ImageQuery($rel_link: String!) {
-        placeholderImage: file(relativePath: { eq: $rel_link }) {
-          childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
-  />
-)
-export default Image
+
